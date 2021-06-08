@@ -18,6 +18,7 @@ function getCountryAlias(data){
   }
 }
 function fillPrompt(data){
+  console.log("[IP2C]", data);
   var result = warranty[data[2]];
   if(!result) result = genstatus.unknown;
   document.getElementById("country").textContent = getCountryAlias(data);
