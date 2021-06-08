@@ -1,8 +1,5 @@
 var genstatus = {
-  "yes": "Yes, manufacturers cannot legally void your warranty if you modify your laptop's components or stickers.",
-  "yesLimited": "Yes, but manufacturers can void your warranty if you remove any stickers.",
-  "noStrict": "No, manufacturers can void your warranty for any modification, including any parts and stickers.",
-  "noRelaxed": "No, manufacturers can void your warranty if you modify the internal components of your laptop. You can, however, remove non-identifying stickers.",
+  "yes": "Yes, manufacturers cannot legally void your warranty if you modify your laptop's components or remove non-identifying stickers.",
   "unknown": "We're not sure - please review your local laws and create an issue on the GitHub repo."
 }
 var warranty = {
@@ -10,7 +7,9 @@ var warranty = {
   "DEU": genstatus.yes,
   "CAN": genstatus.yes,
   "GBR": genstatus.yes,
-  "AUS": genstatus.yes
+  "AUS": genstatus.yes,
+  "MEX": "Yes, assuming the repair or modification was done in good faith, the manufacturer cannot void your warranty.",
+  "IND": "No. In India, manufacturers can void your warranty if any non-manufacturer-certified repairs or upgrades are conducted, or if a warranty seal is broken."
 }
 
 function getCountryAlias(data){
@@ -26,7 +25,7 @@ function fillPrompt(data){
   var result = warranty[data[2]];
   if(!result) result = genstatus.unknown;
   document.getElementById("country").textContent = getCountryAlias(data);
-  document.getElementById("result").textContent = result;
+  document.getElementById("result").innerHTML = result;
   $("#loading").fadeOut(500, function(d){
     $("#main").fadeIn(1000);
   });
