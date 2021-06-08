@@ -9,7 +9,8 @@ var warranty = {
   "USA": genstatus.yes,
   "DEU": genstatus.yes,
   "CAN": genstatus.yes,
-  "GBR": genstatus.yes
+  "GBR": genstatus.yes,
+  "AUS": genstatus.yes
 }
 
 function getCountryAlias(data){
