@@ -15,6 +15,7 @@ function getCountryAlias(data){
       return "the" + data[3];
     default:
       return data[3];
+  }
 }
 function fillPrompt(data){
   var result = warranty[data[2]];
