@@ -22,7 +22,9 @@ function fillPrompt(data){
   if(!result) result = genstatus.unknown;
   document.getElementById("country").textContent = getCountryAlias(data);
   document.getElementById("result").textContent = result;
-  $("#main").fadeIn(1000);
+  $("#loading").fadeOut(500, function(d){
+    $("#main").fadeIn(1000);
+  });
 }
 $.get("https://ip2c.org/s", function( data ) {
     window.ipdata = data.split(";");
