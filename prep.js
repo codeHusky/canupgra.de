@@ -1,12 +1,15 @@
 var genstatus = {
-  "yes": "Yes, manufacturers cannot legally revoke your warranty if you modify your laptop's components or stickers.",
-  "noStrict": "No, manufacturers can revoke your warranty if you modify anything about your laptop, including non-identifying stickers.",
-  "noRelaxed": "No, manufacturers can revoke your warranty if you modify the internal components of your laptops. You can, however, remove non-identifying stickers.",
+  "yes": "Yes, manufacturers cannot legally void your warranty if you modify your laptop's components or stickers.",
+  "yesLimited": "Yes, but manufacturers can void your warranty if you remove any stickers.",
+  "noStrict": "No, manufacturers can void your warranty for any modification, including any parts and stickers.",
+  "noRelaxed": "No, manufacturers can void your warranty if you modify the internal components of your laptop. You can, however, remove non-identifying stickers.",
   "unknown": "We're not sure - please review your local laws and create an issue on the GitHub repo."
 }
 var warranty = {
   "USA": genstatus.yes,
-  "DEU": genstatus.yes
+  "DEU": genstatus.yes,
+  "CAN": genstatus.yes,
+  "GBR": genstatus.yes
 }
 
 function getCountryAlias(data){
