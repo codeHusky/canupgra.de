@@ -12,7 +12,7 @@ var warranty = {
 function getCountryAlias(data){
   switch(data[2]){
     case "USA":
-      return "the" + data[3];
+      return "the " + data[3];
     default:
       return data[3];
   }
@@ -22,6 +22,7 @@ function fillPrompt(data){
   if(!result) result = genstatus.unknown;
   document.getElementById("country").textContent = getCountryAlias(data);
   document.getElementById("result").textContent = result;
+  $("#main").fadeIn(1000);
 }
 $.get("https://ip2c.org/s", function( data ) {
     window.ipdata = data.split(";");
